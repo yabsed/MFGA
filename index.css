@@ -229,6 +229,14 @@ footer {
   .about-content { flex-direction: column; }
 }
 
+@media (max-width: 300px) {
+  .nav-logo { display: none; }
+  nav {
+    justify-content: flex-end;
+  }
+}
+
+
 /* Custom Header Image Style */
 .header-img {
   width: 250px; /* 이미지 크기를 조금 키웁니다 */
