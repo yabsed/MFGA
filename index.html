@@ -3,9 +3,140 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="reset.css" rel="stylesheet" />
-    <title>Document</title>
+    <title>설한동 | 포토폴리오</title>
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Xiaomi_logo.svg/300px-Xiaomi_logo.svg.png" />
+    <link href="index.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
-  <body></body>
-  <script src="index.js"></script>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="#home" class="nav-logo">My Portfolio</a>
+        <ul class="nav-menu">
+          <li><a href="#about">소개</a></li>
+          <li><a href="#skills">기술</a></li>
+          <li><a href="#projects">프로젝트</a></li>
+          <li><a href="#contact">연락처</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle-btn">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </nav>
+
+    <header id="home" class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">안녕하세요, 김연우입니다.</h1>
+        <p class="hero-subtitle">성장하는 프론트엔드 개발자 포트폴리오</p>
+        <a href="#projects" class="hero-button">프로젝트 보러가기</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="content-section animate-on-scroll">
+        <div class="section-container">
+          <h2 class="section-title">소개</h2>
+          <div class="about-content">
+            <img
+              src="https://via.placeholder.com/250"
+              alt="프로필 사진"
+              class="about-img"
+            />
+            <p class="about-text">
+              사용자에게 즐거운 경험을 선사하는 웹 페이지를 만드는 데 열정을
+              가진 프론트엔드 개발자 지망생입니다. 직관적인 UI/UX에 대해 항상
+              고민하며, 새로운 기술 스택을 익히는 것을 즐깁니다. 함께 배우고
+              성장하는 것을 중요하게 생각합니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="content-section animate-on-scroll">
+        <div class="section-container">
+          <h2 class="section-title">보유 기술</h2>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class="fab fa-html5 skill-icon"></i><span>HTML5</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-css3-alt skill-icon"></i><span>CSS3</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-js-square skill-icon"></i><span>JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-react skill-icon"></i><span>React</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="content-section animate-on-scroll">
+        <div class="section-container">
+          <h2 class="section-title">프로젝트</h2>
+          <div class="projects-grid">
+            <div class="project-card">
+              <img
+                src="https://via.placeholder.com/400x250"
+                alt="프로젝트 1"
+                class="project-img"
+              />
+              <div class="project-content">
+                <h3 class="project-title">프로젝트 1: 개인 포트폴리오</h3>
+                <p class="project-description">
+                  바닐라 JS, HTML, CSS를 사용하여 제작한 반응형 개인 포트폴리오
+                  웹사이트입니다.
+                </p>
+                <div class="project-links">
+                  <a href="#" target="_blank">사이트 보기</a>
+                  <a href="#" target="_blank">GitHub</a>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <img
+                src="https://via.placeholder.com/400x250"
+                alt="프로젝트 2"
+                class="project-img"
+              />
+              <div class="project-content">
+                <h3 class="project-title">프로젝트 2: (준비 중)</h3>
+                <p class="project-description">
+                  다음 프로젝트에 대한 설명입니다.
+                </p>
+                <div class="project-links">
+                  <a href="#">사이트 보기</a>
+                  <a href="#">GitHub</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <div class="section-container">
+        <h2 class="section-title">연락처</h2>
+        <p>아래 채널을 통해 편하게 연락주세요.</p>
+        <div class="contact-links">
+          <a href="mailto:youremail@example.com"
+            ><i class="fas fa-envelope"></i> Email</a
+          >
+          <a href="https://github.com/Yeonu-Kim" target="_blank"
+            ><i class="fab fa-github"></i> GitHub</a
+          >
+        </div>
+        <p class="footer-copy">
+          &copy; 2025 Kim Yeonu. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
 </html>
