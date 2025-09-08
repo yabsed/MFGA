@@ -58,12 +58,11 @@
 
 #### button 
 
-- button
-    - type
-        - `button` : 기본
-        - `submit` : form 데이터를 제출
-        - `reset` : form 데이터를 초기화
-    - `disabled` : 비활성화
+- type
+    - `button` : 기본
+    - `submit` : form 데이터를 제출
+    - `reset` : form 데이터를 초기화
+- `disabled` : 비활성화
 
 #### 간단한 form 예제
 
@@ -86,7 +85,17 @@
 </form>
 ```
 
-
+- `submit` 버튼을 누르면?
+    - `<input type="submit">` or `<button type="submit">`
+    1. 데이터 수집 : 모든 **input** 요소들의 값
+    2. 유효성 검사 
+        - type이 email인데 골뱅이 @가 없음
+        - 경고 메시지 🚨
+    3. 데이터 전송
+        - `method`에 정의된 방식 (`get`, `post`)으로
+    4. 페이지 이동, 변화
+        - `action`에 지정된 페이지로 이동하거나
+        - 현재 페이지에 변화가 생긴다. 
 
 #### 작은 그림
 
