@@ -37,3 +37,4 @@ themeToggleButton.addEventListener("click", () => {
     const isDarkMode = document.body.classList.contains("dark-mode");
     applyTheme(isDarkMode ? "light" : "dark");
 });
+
