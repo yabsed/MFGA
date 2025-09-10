@@ -16,16 +16,46 @@
 
 - nav
     - a (`.nav-logo`) : My Portfolio
-    - div (`.nav-links`) : About, Skills, Projects, Contact
+    - div (`.nav-links`)
+        - a : About
+        - a : Skills
     - button (`#theme-toggle`)
         - span (`#moon-icon`) : 🌙
         - span (`#sun-icon`) : ☀️
 - header (`#home`)
     - img (`.profile-img .header-img`)
     - a (`.hero-button`) : View My Projects
-- main
-    - section (`#about .animate-on-scroll`)
-        - 
+- (main)
+- section (`#about .animate-on-scroll`)
+    - h2 : about me
+    - div (`.about-content`)
+        - img (`.profile-img .about-img`)
+        - p : ...
+- section (`#skills .animate-on-scroll`)
+    - div (`.skills-grid`)
+        - div (`skill-item`)
+            - span : HTML5
+        - div (`skill-item`)
+            - span : CSS3
+        - (...)
+- section (`#projects .animate-on-scroll`)
+    - div (`.projects-grid`)
+        - div (`.projects-card`)
+            - div(`projects-content`)
+                - h3 : E-commerce
+                - p : ...
+                - div(`projects-links`)
+                    - a : view site
+                    - a : github
+        - div (`.projects-card`)
+
+- footer (`#contact`)
+    - h2 : contact
+    - p : ...
+    - div (`.contact-links`)
+        - a
+        - a
+    - p (`.footer-copy`) : 2025 DJT. 
 
 
 ### nav
@@ -241,5 +271,3 @@
 - `<main>` : 문서의 핵심, 단 하나의 주인공!
 - `<section>` : 내용의 의미 있는 구분, 책의 장
 - `<div>` : 의미 없는 만능 상자
-
-#### w
