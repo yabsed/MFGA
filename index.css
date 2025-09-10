@@ -119,6 +119,9 @@ header {
   font-weight: bold;
   margin-top: 1rem;
 }
+
+/* ------- */
+
 .hero-button:hover {
     background-color: #0056b3;
     text-decoration: none;
