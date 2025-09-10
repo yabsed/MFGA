@@ -136,12 +136,6 @@ body.dark-mode .hero-button:hover {
   max-width: 900px;
   margin: auto;
 }
-.about-img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-}
 
 /* Skills & Projects Grid */
 .skills-grid, .projects-grid {
@@ -237,23 +231,6 @@ footer {
 }
 
 
-/* Custom Header Image Style */
-.header-img {
-  width: 250px; /* 이미지 크기를 조금 키웁니다 */
-  height: 250px;
-  border-radius: 50%; /* 원형 모양은 유지합니다 */
-  object-fit: cover;
-  border: 5px solid var(--primary-color); /* 테마 색상과 일치하는 테두리 추가 */
-  box-shadow: 0 10px 30px var(--shadow-color), 0 0 0 10px var(--bg-color); /* 입체감을 주는 그림자 효과 */
-  animation: float 4s ease-in-out infinite; /* 부드럽게 떠다니는 애니메이션 */
-  transition: transform 0.3s ease-in-out; /* 호버 효과를 위한 transition */
-  margin-bottom: 1.5rem; /* 제목과의 간격 조정 */
-}
-
-/* 마우스를 올렸을 때 살짝 커지는 효과 */
-.header-img:hover {
-  transform: scale(1.05);
-}
 
 /* 떠다니는 애니메이션 효과 정의 */
 @keyframes float {
@@ -266,4 +243,30 @@ footer {
   100% {
     transform: translateY(0px);
   }
+}
+
+/* 1. 공통 스타일을 담는 기본 클래스를 만듭니다. */
+.profile-img {
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out; 
+}
+
+/* 2. 각 요소의 고유한 스타일만 정의합니다. */
+.about-img {
+    width: 200px;
+    height: 200px;
+}
+
+.header-img {
+    width: 250px; 
+    height: 250px;
+    border: 5px solid var(--primary-color); 
+    box-shadow: 0 10px 30px var(--shadow-color), 0 0 0 10px var(--bg-color); 
+    animation: float 4s ease-in-out infinite; 
+    margin-bottom: 1.5rem; 
+}
+
+.header-img:hover {
+    transform: scale(1.05);
 }

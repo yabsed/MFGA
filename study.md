@@ -4,11 +4,29 @@
 
 ### big picture
 
-- body
-    - nav
-    - header
-    - main
-    - footer
+- nav
+- header
+- main
+    - section
+    - section
+    - section
+- footer
+
+### big picture - id and clas
+
+- nav
+    - a (`.nav-logo`) : My Portfolio
+    - div (`.nav-links`) : About, Skills, Projects, Contact
+    - button (`#theme-toggle`)
+        - span (`#moon-icon`) : 🌙
+        - span (`#sun-icon`) : ☀️
+- header (`#home`)
+    - img (`.profile-img .header-img`)
+    - a (`.hero-button`) : View My Projects
+- main
+    - section (`#about .animate-on-scroll`)
+        - 
+
 
 ### nav
 
@@ -97,36 +115,131 @@
         - `action`에 지정된 페이지로 이동하거나
         - 현재 페이지에 변화가 생긴다. 
 
-#### 작은 그림
+#### CSS의 단위
 
-- `<a href="#home" class="nav-logo">`
-    - `<a>` 태그 : **하이퍼링크**를 만든다. 
-    - `href="#home"` : `id="home"`인 header로 이동
-    - `class="nav-logo"` : CSS Class를 부여
-        ```
-        .nav-logo {
-            font-weight: 700;
-            font-size: 1.5rem;
-        }
-        ```
-- `<div class="nav-links"> ... </div>`
-    - `<div>` 태그 : 컨테이너 (📦)
-        - 레이아웃 구성 : 웹 페이지의 구조를 잡음
-        - 스타일링 및 스크립팅: CSS, JavaScript 동작 제어
-    - `class="nav-links"`
-        ```
-        .nav-links a {
-            margin: 0 0.75rem;
-            font-weight: 800;
-        }
-        ```
-        ```
-        @media (max-width: 630px) {
-            h1 { font-size: 2.5rem; }
-            .nav-links { display: none; }
-            .about-content { flex-direction: column; }
-        }
-        ```
-    - `<a href="#about">About</a>` : 하이퍼링크
+- 절대 단위 : `px` (픽셀)
+- 상대 단위
+    - 글꼴 기준
+        - `rem` : `<html>`의 글자 크기 기준
+        - `em` : 부모 요소 글자 크기
+    - 뷰포트 기준
+        - 뷰포트는 브라우저에서 웹페이지가 실제로 보이는 영역을 의미한다. 
+        - `vw` : viewport width의 1%
+        - `vh` : viewport height의 1%
+        - `vmin`, `vmax`
+    - 백분율 단위
+        - `%` : 부모 요소의 특정 값에 대한 백분율 
+
+#### 백분율 사용 예시
+
+- *HTML*
+    ```
+    <div class="parent-box">
+        부모 요소 (너비 500px)
+        <div class="child-box">
+            자식 요소 (너비 50%)
+        </div>
+    </div> 
+    ```
+
+- *CSS*
+    ```
+    .parent-box{
+        width : 500px;
+        height : 200px;
+        background-color: lightgray; 
+        padding: 10px;
+    }
+    .child-box {
+        width: 50%; 
+        height: 100px; 
+        background-color: skyblue; 
+    }
+    ```
+
+- width는 부모 요소의 50%인 250px가 된다. 
 
 
+#### nav의 모습
+
+```
+<nav>
+    <a href="#home" class="nav-logo">My Portfolio</a>
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <button id="theme-toggle">
+        <span id="moon-icon">🌙</span>
+        <span id="sun-icon">☀️</span>
+    </button>
+</nav>
+```
+
+#### header의 모습
+```
+<header id="home">
+        <img src="링크"
+             alt="Header Picture" 
+             class="profile-img header-img">
+        <h1>Hello, I'm DJT.</h1>
+        <p>We are going to <strong>Make Frontend Developing Great Again.</strong> </p>
+        <a href="#projects" class="hero-button">View My Projects</a>
+    </header> 
+```
+
+#### 하나의 태크, 중복되는 class
+- `<img ... class="profile-img header-img>`
+    ```
+    .profile-img {
+        border-radius: 50%;
+        object-fit: cover;
+        transition: transform 0.3s ease-in-out; 
+    }
+
+    .about-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .header-img {
+        width: 250px; 
+        height: 250px;
+        border: 5px solid var(--primary-color); 
+        box-shadow: 0 10px 30px var(--shadow-color), 0 0 0 10px var(--bg-color); 
+        animation: float 4s ease-in-out infinite; 
+        margin-bottom: 1.5rem; 
+    }
+
+    .header-img:hover {
+        transform: scale(1.05);
+    }
+    ```
+- 두 클래스에 중복되는 속성이 있다면? (not good)
+    - CSS의 **cascade**
+        - `.css` 파일을 위에서 아래로 읽음
+        - 맨 밑에 있는 *class*의 설정을 따름
+- "(위의 예시처럼) 중복되는 속성이 없도록 설계해야..."
+
+### main 
+
+#### section1 - About Me
+
+```
+<section id="about" class="animate-on-scroll">
+    <h2>About Me</h2>
+    <div class="about-content">
+        <img src="사진.jpg" 
+             alt="Profile Picture" class="profile-img about-img" />
+        <p> Believe me... </p>
+    </div>
+</section>
+```
+
+- `<main>` : 문서의 핵심, 단 하나의 주인공!
+- `<section>` : 내용의 의미 있는 구분, 책의 장
+- `<div>` : 의미 없는 만능 상자
+
+#### w
