@@ -1,6 +1,7 @@
 /* style.css */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap");
 
+/* check */
 :root {
   --primary-color: #007bff;
   --bg-color: #fff;
@@ -8,9 +9,11 @@
   --section-bg-color: #f8f9fa;
   --border-color: #dee2e6;
   --shadow-color: rgba(0, 0, 0, 0.1);
-  --transition: 0.3s ease;
+  --transition: 0.3s ease-in-out;
+  --padding-top: 60px
 }
 
+/* check */
 body.dark-mode {
   --primary-color: #3498db;
   --bg-color: #2c3e50;
@@ -19,6 +22,7 @@ body.dark-mode {
   --border-color: #5d6d7e;
   --shadow-color: rgba(0, 0, 0, 0.4);
 }
+
 
 html {
   scroll-behavior: smooth;
@@ -31,7 +35,7 @@ body {
   transition: background-color var(--transition), color var(--transition);
   line-height: 1.6;
   margin: 0;
-  padding-top: 60px; /* Nav height */
+  padding-top: var(--padding-top)
 }
 
 a {
@@ -39,7 +43,7 @@ a {
     text-decoration: none;
 }
 a:hover {
-    text-decoration: underline;
+    text-decoration: underline wavy;
 }
 
 section {
@@ -69,7 +73,7 @@ nav {
   background-color: var(--bg-color);
   box-shadow: 0 2px 5px var(--shadow-color);
   z-index: 1000;
-  height: 60px;
+  height: var(--padding-top);
   box-sizing: border-box;
 }
 .nav-logo {

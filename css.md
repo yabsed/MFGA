@@ -1,8 +1,6 @@
 # CSS의 측면
 
-## 큰 그림
-
-### :root
+## :root
 
 ```
 :root {
@@ -16,12 +14,10 @@
 }
 ```
 
-- `:root` ( = `<html>`)
-    - CSS 변수를 선언 : `--primary-color: #007bff;`
-- 기본 (라이트 모드)
+- CSS 내부 변수 : `--`
 
 
-### body.dark-mode
+## body.dark-mode
 
 ```
 body.dark-mode {
@@ -59,18 +55,10 @@ themeToggleButton.addEventListener("click", () => {
 });
 ```
 
-- 사용자가 테마 변경 버튼(`#theme-toggle`)을 클릭
-- JS는 `<body>` 태그에 `dark-mode` 클래스가 있는지 확인
-    - 없으면 추가
+- 버튼(`#theme-toggle`)을 클릭
+- `<body>` 태그에 `dark-mode` 클래스가 있는지 확인
+    - 없으면 추가 `<body class="dark-mode">`
     - 있으면 제거
-
-- 평상시
-    `<body>` 태그에는 `dark-mode` 클래스가 없음
-    - `:root`에 정의된 변수들 사용
-- 다크 모드
-    - JS가 `<body>` 태그에 `class="dark-mode"`를 추가
-        - `<body class="dark-mode">`
-    - `body.dark-mode` 선택자 활성화
 
 ```
 #sun-icon {
@@ -89,16 +77,79 @@ body.dark-mode #moon-icon {
 | 라이트 | (클래스 없음) | 보임 | 숨김 | 누르면 다크 모드 |
 | 다크 | `.dark-mode` | 숨김 | 보임 | 누르면 라이트 모드 | 
 
+## display 속성의 주요 설정
+
+| 속성값 | 배치 방식 | 너비/높이 | 대표 특징 |
+| -- | -- | -- | -- |
+| `block` | 한줄 전체 차지 | 적용 가능 | 수직으로 쌓이는 박스 |
+| `inline` | 콘텐츠 크기만큼 차지 | 적용 불가 | 글자처럼 흐름 |
+| `inline-block` | `inline`처럼 흐름 | 적용 가능 | `inline` +  `block` | 
+| `flex` | 1차원 (가로 or 세로) | 자식 요소 제어 | 유연한 아이템 정렬 | 
+| `grid` | 2차원 (가로 + 세로) | 자식 요소 제어 | 강력한 격자무늬 레이아웃 | 
+| `none` | 렌더링 안됨 | - | 화면에서 완전히 제거 | 
+
+## body
 
 ```
-.hero-button:hover {
-    background-color: #0056b3;
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color var(--transition), color var(--transition);
+  line-height: 1.6;
+  margin: 0;
+  padding-top: 60px; /* Nav height */
+}
+```
+
+- `transtion`
+    - property : width, background-color
+    - duration : 2s
+    - timing-function : ease-in, linear
+    - delay
+
+- `margin` : 요소의 바깥 여백
+    - longhand
+        - margin-top
+        - margin-right
+        - margin-bottom
+        - margin-left
+    - `margin: 10px 20px 30px 40px;` (시계방향)
+    - `margin: 25px 50px;` (상하, 좌우)
+    - `margin: 20px`
+    - 가운데 정렬 : `margin: 0 auto`
+
+- `padding`: 요소의 안쪽 여백
+
+## a
+
+```
+a {
+    color: var(--primary-color);
     text-decoration: none;
 }
-body.dark-mode .hero-button:hover {
-    background-color: #2980b9;
+a:hover {
+    text-decoration: underline wavy;
 }
 ```
 
-- `#moon-icon`
-    - 기본 상태 :  
+- **pseudo-class**
+    - 링크(`<a>`), 버튼(`<button>`)
+        - `:active` : 클릭하고 있는 동안
+        - `:link` : 방문 안한
+        - `:visited` : 방문 했던
+    - 입력 (form)
+        - `:focus` : focus를 받음
+            - 입력 커서 깜빡
+            - tab으로 버튼, 링크 선택
+        - `:focus-within` : 자신 or 자식 요소가...
+        - `:disabled` : 요소가 비활성화됨
+        - `:checked` 
+
+- `text-decoration`
+    - `line` : underline, none ...
+    - `deco-style` : solid, wavy ...
+    - `deco-color`
+    - `deco-thinkness`
+
+
