@@ -1,7 +1,7 @@
 /* style.css */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap");
 
-/* check */
+/* Root Var */
 :root {
   --primary-color: #007bff;
   --bg-color: #fff;
@@ -12,8 +12,6 @@
   --transition: 0.3s ease-in-out;
   --padding-top: 60px
 }
-
-/* check */
 body.dark-mode {
   --primary-color: #3498db;
   --bg-color: #2c3e50;
@@ -23,7 +21,7 @@ body.dark-mode {
   --shadow-color: rgba(0, 0, 0, 0.4);
 }
 
-
+/* HTML and Body */
 html {
   scroll-behavior: smooth;
 }
@@ -43,7 +41,7 @@ a {
     text-decoration: none;
 }
 a:hover {
-    text-decoration: underline wavy;
+    text-decoration: underline;
 }
 
 section {
@@ -237,8 +235,6 @@ footer {
   }
 }
 
-
-
 /* 떠다니는 애니메이션 효과 정의 */
 @keyframes float {
   0% {
@@ -252,14 +248,14 @@ footer {
   }
 }
 
-/* 1. 공통 스타일을 담는 기본 클래스를 만듭니다. */
+/* ------------------- */
+
 .profile-img {
     border-radius: 50%;
     object-fit: cover;
     transition: transform 0.3s ease-in-out; 
 }
 
-/* 2. 각 요소의 고유한 스타일만 정의합니다. */
 .about-img {
     width: 200px;
     height: 200px;

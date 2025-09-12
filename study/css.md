@@ -102,23 +102,9 @@ body {
 }
 ```
 
-- `transtion`
-    - property : width, background-color
-    - duration : 2s
-    - timing-function : ease-in, linear
-    - delay
-
+- `transtion` : 화면 전환
+    - `background-color 0.3s ease-in-out;`
 - `margin` : 요소의 바깥 여백
-    - longhand
-        - margin-top
-        - margin-right
-        - margin-bottom
-        - margin-left
-    - `margin: 10px 20px 30px 40px;` (시계방향)
-    - `margin: 25px 50px;` (상하, 좌우)
-    - `margin: 20px`
-    - 가운데 정렬 : `margin: 0 auto`
-
 - `padding`: 요소의 안쪽 여백
 
 ## a
@@ -135,7 +121,8 @@ a:hover {
 
 - **pseudo-class**
     - 링크(`<a>`), 버튼(`<button>`)
-        - `:active` : 클릭하고 있는 동안
+        - `:hover` : 버튼 올림
+        - `:active` : 클릭 동안
         - `:link` : 방문 안한
         - `:visited` : 방문 했던
     - 입력 (form)
@@ -151,5 +138,95 @@ a:hover {
     - `deco-style` : solid, wavy ...
     - `deco-color`
     - `deco-thinkness`
+
+## section
+
+```
+section {
+    padding: 5rem 2rem;
+}
+section:nth-of-type(even) {
+    background-color: var(--section-bg-color);
+}
+```
+- `rem` : **r**oot **e**le**m**ent (font-size)
+- `em` : **e**le**m**ent (font-size)
+
+## nav
+
+```
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--bg-color);
+  box-shadow: 0 2px 5px var(--shadow-color);
+  z-index: 1000;
+  height: var(--padding-top);
+  box-sizing: border-box;
+}
+```
+### `position: fixed`
+    
+| 옵션 | GPT 비유 |
+| -- | -- | 
+| `static` | 도서관에 순서대로 꽂힌 책들 📚 |
+| `relative` | 자리에 앉아 몸만 움직이는 사람 🧍 |
+| `absolute` | 교실 벽에 붙은 게시물 📌 |
+| `fixed` | 스마트폰 화면의 카메라 앱 아이콘 📱 |
+| `sticky` | 포스트잇으로 책에 붙인 인덱스 📑 |
+
+- `postion` 옵션을 없애면 `--padding-top`만큼 아래로 밀림
+    - `<body>`의 *padding-top* 옵션 때문
+
+### `display : flex`
+- 주요 특징 (책장과 책 📚)
+    - 1차원 (가로 or 세로)
+    - 자식 요소 제어
+    - 유연한 아이템 정렬 
+- 2개의 축
+    - `justify-content` : 가로
+    - `align-items` : 세로
+
+- `justify-content`
+    - `flex-start` (기본값)
+    - `flex-end`
+    - `center`
+    - `space-between` : 벽🧍↔️🧍↔️🧍벽
+    - `space-around` : 벽➡️🧍↔️🧍↔️🧍⬅️벽
+
+- `align-items`
+    - `stretch` (기본값)
+    - `flex-start`
+    - `flex-end` 
+    - `center` 
+
+### `box-shadow: 0 2px 5px var(--shadow-color);`
+
+- 인자들
+    - offset-x : 수평 위치
+    - offset-y : 수직 위치
+    - blur-radius : 그림자의 **부드러움**
+    - spread-radius : 그림자의 **크기**
+    - color
+    - inset : 요소의 안쪽에 생김
+
+- **offset** vs **spread-radius**
+    - offset: **위치**가 바뀜
+    - spread-radius: 그림자가 **커짐**
+
+- DJT 사진으로 확인할 것
+
+    | offset-y | spread-radius |
+    | -- | -- |
+    | ![](image/offset-y.png) | ![](image/spread-radius.png) |
+
+### `box-sizing: border-box`
+
+
 
 
