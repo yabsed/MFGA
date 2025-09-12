@@ -193,9 +193,9 @@ nav {
     - `align-items` : 세로
 
 - `justify-content`
-    - `flex-start` (기본값)
-    - `flex-end`
-    - `center`
+    - `flex-start` 
+    - `flex-end` 
+    - `center` 
     - `space-between` : 벽🧍↔️🧍↔️🧍벽
     - `space-around` : 벽➡️🧍↔️🧍↔️🧍⬅️벽
 
@@ -227,6 +227,36 @@ nav {
 
 ### `box-sizing: border-box`
 
+```
+.box {
+  width: 200px;
+  padding: 20px;
+  border: 10px solid black;
+}
+```
+- 최종 너비
+    - `content-box;` 200px (width) + 40px (padding) + 20px (border) = 260px
+    - `border-box;` : 200px
 
+- `border-box`는 레이아웃 관리를 쉽게 만든다. 
+    - padding, border와 무관하게 박스의 너비가 고정됨
+    - 레이아웃이 안정적으로 유지됨
 
+## header
 
+```
+header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+```
+
+- 아까 봤던 **flex**
+    - `flex-direction: column;`
+    - `justify-content: center;`
+    - `align-items: center;`
